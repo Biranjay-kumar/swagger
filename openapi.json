@@ -1,0 +1,1381 @@
+{
+  "openapi": "3.0.0",
+  "info": {
+    "title": "Indian Railway",
+    "version": "1.0.0"
+  },
+  "servers": [
+    {
+      "url": "localhost://"
+    }
+  ],
+  "components": {
+    "securitySchemes": {
+      "noauthAuth": {
+        "type": "http",
+        "scheme": "noauth"
+      }
+    }
+  },
+  "tags": [
+    {
+      "name": "User"
+    },
+    {
+      "name": "Station"
+    },
+    {
+      "name": "Trains"
+    },
+    {
+      "name": "Booking"
+    }
+  ],
+  "paths": {
+    "/001/api/v1/user/": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Register user",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "username": "biranjay",
+                  "email": "biranjaykumargupta@gmail.com",
+                  "password": "123456"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "noauthAuth": []
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "headers": {
+              "X-Powered-By": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "287"
+                }
+              },
+              "ETag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"11f-hsuDX+Xh1hI57tvMtiqXkol1/T8\""
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Thu, 06 Feb 2025 16:39:02 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "message": "User registered successfully",
+                  "userId": {
+                    "role": "user",
+                    "id": 3,
+                    "username": "biranjay",
+                    "email": "biranjaykumargupta@gmail.com",
+                    "password": "$2a$10$DUeNAPfTjfaAPtoci9WcyOJPYko1sgBf8JUsm7pRVvxX/2QY4hx5G",
+                    "updatedAt": "2025-02-06T16:39:01.989Z",
+                    "createdAt": "2025-02-06T16:39:01.989Z"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "User"
+        ],
+        "summary": "getuser",
+        "security": [
+          {
+            "noauthAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwicm9sZSI6InVzZXIiLCJpYXQiOjE3Mzg4NjE2NTUsImV4cCI6MTczOTQ2NjQ1NX0.PxtCy7MW9vGsZfmotmcnxiLpWpqGgjIkRW3vAlSMeQ4"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Powered-By": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "257"
+                }
+              },
+              "ETag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"101-av5FcVWWcShsAu+T5bDwKd302cY\""
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Thu, 06 Feb 2025 17:13:54 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "success": true,
+                  "data": {
+                    "id": 4,
+                    "username": "sandeep",
+                    "email": "biranjaykumarupta@gmail.com",
+                    "password": "$2a$10$Cqd/ZGHfZ79w699mfYNg6.I1KEC5qLvmVrVtIXMDJgcXFKAlFnF76",
+                    "role": "user",
+                    "createdAt": "2025-02-06T16:46:40.659Z",
+                    "updatedAt": "2025-02-06T16:46:40.659Z"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/001/api/v1/user/login": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "Login",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "email": "biranjaykumarupta@gmail.com",
+                  "password": "123456"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "noauthAuth": []
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Powered-By": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "438"
+                }
+              },
+              "ETag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"1b6-nvEaI0LC2uqJyC1ew6+nfUh7/d4\""
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Thu, 06 Feb 2025 17:07:35 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "message": "Login successful",
+                  "data": {
+                    "id": 4,
+                    "username": "sandeep",
+                    "email": "biranjaykumarupta@gmail.com",
+                    "password": "$2a$10$Cqd/ZGHfZ79w699mfYNg6.I1KEC5qLvmVrVtIXMDJgcXFKAlFnF76",
+                    "role": "user",
+                    "createdAt": "2025-02-06T16:46:40.659Z",
+                    "updatedAt": "2025-02-06T16:46:40.659Z"
+                  },
+                  "token": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NCwicm9sZSI6InVzZXIiLCJpYXQiOjE3Mzg4NjE2NTUsImV4cCI6MTczOTQ2NjQ1NX0.PxtCy7MW9vGsZfmotmcnxiLpWpqGgjIkRW3vAlSMeQ4"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/001/api/v1/user/admin/": {
+      "post": {
+        "tags": [
+          "User"
+        ],
+        "summary": "register as admin",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "username": "mani",
+                  "email": "maniaj@gmail.com",
+                  "password": "123456"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "noauthAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzM4ODYyNzE1LCJleHAiOjE3Mzk0Njc1MTV9.B4tZGFrcOdgIfFEsLCl2t-Trf2gs6RuuzJOtglnmsGg"
+          },
+          {
+            "name": "x-api-key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "admin"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "headers": {
+              "X-Powered-By": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "272"
+                }
+              },
+              "ETag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"110-4i/7ZJRy1NJbKvHMLn8ODEOC5ow\""
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Thu, 06 Feb 2025 17:37:06 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "message": "User registered successfully",
+                  "userId": {
+                    "id": 7,
+                    "username": "mani",
+                    "email": "maniaj@gmail.com",
+                    "password": "$2a$10$pP96lUmh9NwVOl0aiQOxhuAuylLWzL7.Y4jU8mKljE94gZtY9dL1C",
+                    "role": "admin",
+                    "updatedAt": "2025-02-06T17:37:06.651Z",
+                    "createdAt": "2025-02-06T17:37:06.651Z"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/001/api/v1/staion": {
+      "post": {
+        "tags": [
+          "Station"
+        ],
+        "summary": "Create",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "stationName": "New Delhi",
+                  "location": "Delhi, India"
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "noauthAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzM4ODYyNzE1LCJleHAiOjE3Mzk0Njc1MTV9.B4tZGFrcOdgIfFEsLCl2t-Trf2gs6RuuzJOtglnmsGg"
+          },
+          {
+            "name": "x-api-key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "admin"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "headers": {
+              "X-Powered-By": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "134"
+                }
+              },
+              "ETag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"86-BSrRlydaJj3n12m+Gvcal8fflM8\""
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Thu, 06 Feb 2025 19:13:14 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "message": "Station created successfully",
+                  "station": {
+                    "trainIds": [],
+                    "stationId": 1,
+                    "stationName": "New Delhi",
+                    "location": "Delhi, India"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Station"
+        ],
+        "summary": "Get all stations",
+        "security": [
+          {
+            "noauthAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzM4ODYyNzE1LCJleHAiOjE3Mzk0Njc1MTV9.B4tZGFrcOdgIfFEsLCl2t-Trf2gs6RuuzJOtglnmsGg"
+          },
+          {
+            "name": "x-api-key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "admin"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Powered-By": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "419"
+                }
+              },
+              "ETag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"1a3-7eI+i8pir7/amdHJwZcnHYpnUFQ\""
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Thu, 06 Feb 2025 19:15:59 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "stations": [
+                    {
+                      "stationId": 1,
+                      "stationName": "New Delhi",
+                      "location": "Delhi, India",
+                      "trainIds": []
+                    },
+                    {
+                      "stationId": 2,
+                      "stationName": "Rajendar nagar",
+                      "location": "Delhi, India",
+                      "trainIds": []
+                    },
+                    {
+                      "stationId": 3,
+                      "stationName": "Patna",
+                      "location": "Delhi, India",
+                      "trainIds": []
+                    },
+                    {
+                      "stationId": 4,
+                      "stationName": "Mumbai",
+                      "location": "Mumbai, India",
+                      "trainIds": []
+                    },
+                    {
+                      "stationId": 5,
+                      "stationName": "Surat",
+                      "location": "Surat, India",
+                      "trainIds": []
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/001/api/v1/staion/2": {
+      "get": {
+        "tags": [
+          "Station"
+        ],
+        "summary": "Get one station",
+        "security": [
+          {
+            "noauthAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzM4ODYyNzE1LCJleHAiOjE3Mzk0Njc1MTV9.B4tZGFrcOdgIfFEsLCl2t-Trf2gs6RuuzJOtglnmsGg"
+          },
+          {
+            "name": "x-api-key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "admin"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Powered-By": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "98"
+                }
+              },
+              "ETag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"62-SN6GPBZUhE5SqqbglINH3YyoAQc\""
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Thu, 06 Feb 2025 19:16:42 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "station": {
+                    "stationId": 2,
+                    "stationName": "Rajendar nagar",
+                    "location": "Delhi, India",
+                    "trainIds": []
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/001/api/v1/train": {
+      "post": {
+        "tags": [
+          "Trains"
+        ],
+        "summary": "Add trains",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "trainName": "Rajdhani Express",
+                  "sourceStationId": 1,
+                  "destinationStationId": 5,
+                  "totalSeats": 500,
+                  "availableSeats": 500,
+                  "stationIds": [
+                    1,
+                    2,
+                    3
+                  ]
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "noauthAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzM4ODYyNzE1LCJleHAiOjE3Mzk0Njc1MTV9.B4tZGFrcOdgIfFEsLCl2t-Trf2gs6RuuzJOtglnmsGg"
+          },
+          {
+            "name": "x-api-key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "admin"
+          }
+        ],
+        "responses": {
+          "201": {
+            "description": "Created",
+            "headers": {
+              "X-Powered-By": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "275"
+                }
+              },
+              "ETag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"113-kWUT6T5ds8j9sKf9432oBMtexe4\""
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Thu, 06 Feb 2025 19:54:01 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "message": "Train created successfully and stations updated",
+                  "train": {
+                    "trainId": 1,
+                    "trainName": "Rajdhani Express",
+                    "sourceStationId": 1,
+                    "destinationStationId": 5,
+                    "totalSeats": 500,
+                    "availableSeats": 500,
+                    "updatedAt": "2025-02-06T19:54:01.244Z",
+                    "createdAt": "2025-02-06T19:54:01.244Z"
+                  }
+                }
+              }
+            }
+          }
+        }
+      },
+      "get": {
+        "tags": [
+          "Trains"
+        ],
+        "summary": "Get all trains",
+        "security": [
+          {
+            "noauthAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzM4ODYyNzE1LCJleHAiOjE3Mzk0Njc1MTV9.B4tZGFrcOdgIfFEsLCl2t-Trf2gs6RuuzJOtglnmsGg"
+          },
+          {
+            "name": "x-api-key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "admin"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Powered-By": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "615"
+                }
+              },
+              "ETag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"267-fPtUnBWQFqo0yu7+DV8RHP6qG50\""
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Thu, 06 Feb 2025 20:06:49 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "trains": [
+                    {
+                      "trainId": 1,
+                      "trainName": "Rajdhani Express",
+                      "sourceStationId": 1,
+                      "destinationStationId": 5,
+                      "totalSeats": 500,
+                      "availableSeats": 500,
+                      "createdAt": "2025-02-06T19:54:01.244Z",
+                      "updatedAt": "2025-02-06T19:54:01.244Z"
+                    },
+                    {
+                      "trainId": 2,
+                      "trainName": "Local",
+                      "sourceStationId": 1,
+                      "destinationStationId": 2,
+                      "totalSeats": 200,
+                      "availableSeats": 100,
+                      "createdAt": "2025-02-06T20:02:05.714Z",
+                      "updatedAt": "2025-02-06T20:02:05.714Z"
+                    },
+                    {
+                      "trainId": 3,
+                      "trainName": "Bullet Train",
+                      "sourceStationId": 1,
+                      "destinationStationId": 2,
+                      "totalSeats": 200,
+                      "availableSeats": 100,
+                      "createdAt": "2025-02-06T20:02:59.592Z",
+                      "updatedAt": "2025-02-06T20:02:59.592Z"
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/001/api/v1/train/3": {
+      "get": {
+        "tags": [
+          "Trains"
+        ],
+        "summary": "Get trains",
+        "security": [
+          {
+            "noauthAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzM4ODYyNzE1LCJleHAiOjE3Mzk0Njc1MTV9.B4tZGFrcOdgIfFEsLCl2t-Trf2gs6RuuzJOtglnmsGg"
+          },
+          {
+            "name": "x-api-key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "admin"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Powered-By": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "169"
+                }
+              },
+              "ETag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"a9-k97DDFBl12yBy3N10O13cb7e/A8\""
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Thu, 06 Feb 2025 20:20:50 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "success": true,
+                  "train": {
+                    "trainId": 3,
+                    "trainName": "Bullet Train",
+                    "totalSeats": 200,
+                    "availableSeats": 100,
+                    "sourceStation": "New Delhi",
+                    "destinationStation": "Rajendar nagar"
+                  }
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/001/api/v1/booking": {
+      "post": {
+        "tags": [
+          "Booking"
+        ],
+        "summary": "Booking unsuccessful",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "sourceStationId": 1,
+                  "destinationStationId": 2,
+                  "seatCount": 2,
+                  "trainId": 3
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "noauthAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzM4ODYyNzE1LCJleHAiOjE3Mzk0Njc1MTV9.B4tZGFrcOdgIfFEsLCl2t-Trf2gs6RuuzJOtglnmsGg"
+          },
+          {
+            "name": "x-api-key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "admin"
+          }
+        ],
+        "responses": {
+          "400": {
+            "description": "Bad Request",
+            "headers": {
+              "X-Powered-By": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "65"
+                }
+              },
+              "ETag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"41-RFWR1V21dk9cFNusuagwkhwTUmU\""
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Thu, 06 Feb 2025 21:08:25 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "message": "This train does not stop at the destination station"
+                }
+              }
+            }
+          }
+        }
+      }
+    },
+    "/001/api/v1/booking/empty-slots": {
+      "post": {
+        "tags": [
+          "Booking"
+        ],
+        "summary": "Empty slots between two station ",
+        "requestBody": {
+          "content": {
+            "application/json": {
+              "schema": {
+                "type": "object",
+                "example": {
+                  "sourceStationId": 1,
+                  "destinationStationId": 2
+                }
+              }
+            }
+          }
+        },
+        "security": [
+          {
+            "noauthAuth": []
+          }
+        ],
+        "parameters": [
+          {
+            "name": "Authorization",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6NSwicm9sZSI6ImFkbWluIiwiaWF0IjoxNzM4ODYyNzE1LCJleHAiOjE3Mzk0Njc1MTV9.B4tZGFrcOdgIfFEsLCl2t-Trf2gs6RuuzJOtglnmsGg"
+          },
+          {
+            "name": "x-api-key",
+            "in": "header",
+            "schema": {
+              "type": "string"
+            },
+            "example": "admin"
+          }
+        ],
+        "responses": {
+          "200": {
+            "description": "OK",
+            "headers": {
+              "X-Powered-By": {
+                "schema": {
+                  "type": "string",
+                  "example": "Express"
+                }
+              },
+              "Access-Control-Allow-Origin": {
+                "schema": {
+                  "type": "string",
+                  "example": "*"
+                }
+              },
+              "Content-Type": {
+                "schema": {
+                  "type": "string",
+                  "example": "application/json; charset=utf-8"
+                }
+              },
+              "Content-Length": {
+                "schema": {
+                  "type": "integer",
+                  "example": "154"
+                }
+              },
+              "ETag": {
+                "schema": {
+                  "type": "string",
+                  "example": "W/\"9a-WcxzF+jE2dlmpdw0LzCEJhuItz8\""
+                }
+              },
+              "Date": {
+                "schema": {
+                  "type": "string",
+                  "example": "Thu, 06 Feb 2025 21:20:43 GMT"
+                }
+              },
+              "Connection": {
+                "schema": {
+                  "type": "string",
+                  "example": "keep-alive"
+                }
+              },
+              "Keep-Alive": {
+                "schema": {
+                  "type": "string",
+                  "example": "timeout=5"
+                }
+              }
+            },
+            "content": {
+              "application/json": {
+                "schema": {
+                  "type": "object"
+                },
+                "example": {
+                  "totalAvailableSeats": 198,
+                  "trains": [
+                    {
+                      "trainName": "Local",
+                      "trainId": 2,
+                      "availableSeats": 98
+                    },
+                    {
+                      "trainName": "Bullet Train",
+                      "trainId": 3,
+                      "availableSeats": 100
+                    }
+                  ]
+                }
+              }
+            }
+          }
+        }
+      }
+    }
+  }
+}
