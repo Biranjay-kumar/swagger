@@ -6,7 +6,6 @@ import swaggerUi from "swagger-ui-express";
 import fs from "fs";
 import path from "path";
 import { fileURLToPath } from "url";
-import routes from "./routes.js";
 import http from "http";
 
 dotenv.config();
@@ -34,8 +33,7 @@ try {
 }
 app.use("/api-docs", swaggerUi.serve, swaggerUi.setup(openapiData));
 
-// Routes
-app.use("/api", routes);
+
 
 app.get("/", (req, res) => {
   res.status(200).send("Backend is up and running");
